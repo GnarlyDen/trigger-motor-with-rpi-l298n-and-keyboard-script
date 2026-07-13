@@ -16,21 +16,13 @@ def stop():
     in2.value(0)
 
 #self-explanatory
-def waitFor50ms():
-    time.sleep(.05)
-
 def backwards():
     in1.value(0)
     in2.value(1)
-    waitFor50ms()
-    stop()
 
 def forwards():
     in1.value(1)
     in2.value(0)
-    waitFor50ms()
-    stop()
-
 
 #triggers the motor to move back or forth after 'w'
 #or 's' are pressed
@@ -55,7 +47,6 @@ while True:
     if events:
         try:
             key_from_pc = sys.stdin.read(1)
-            print(key_from_pc)
             trigger_motor(key_from_pc)
 
         except:

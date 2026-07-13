@@ -16,19 +16,19 @@ def stop():
     in2.value(0)
 
 #self-explanatory
-def waitFor1s():
-    time.sleep(1)
+def waitFor50ms():
+    time.sleep(.05)
 
 def backwards():
     in1.value(0)
     in2.value(1)
-    waitFor1s()
+    waitFor50ms()
     stop()
 
 def forwards():
     in1.value(1)
     in2.value(0)
-    waitFor1s()
+    waitFor50ms()
     stop()
 
 
@@ -41,6 +41,9 @@ def trigger_motor(key_input):
 
     if key_input == 'w':
         forwards()
+
+    if key_input == 'r':
+        stop()
 
 poll = select.poll()
 poll.register(sys.stdin, select.POLLIN)
